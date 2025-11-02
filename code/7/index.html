@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="navApp">
+<head>
+  <meta charset="UTF-8">
+  <title>AngularJS Navigation Menu</title>
+  <!-- Link to AngularJS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      background-color: #f2f2f2;
+      border-radius: 5px;
+      overflow: hidden;
+      width: fit-content;
+    }
+    li {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+    li:hover {
+      background-color: #ddd;
+    }
+    .active {
+      background-color: #4CAF50;
+      color: white;
+    }
+  </style>
+</head>
+
+<body ng-controller="NavController">
+  <h2>🌐 AngularJS Navigation Menu</h2>
+
+  <ul>
+    <li ng-repeat="item in menuItems"
+        ng-click="select(item)"
+        ng-class="{active: selectedItem === item}">
+      {{item}}
+    </li>
+  </ul>
+
+  <p>You selected: <strong>{{selectedItem}}</strong></p>
+
+  <script>
+    var app = angular.module("navApp", []);
+    app.controller("NavController", function($scope) {
+      $scope.menuItems = ["Home", "About", "Services", "Contact"];
+      $scope.selectedItem = "Home"; // default
+
+      $scope.select = function(item) {
+        $scope.selectedItem = item;
+      };
+    });
+  </script>
+</body>
+</html>
