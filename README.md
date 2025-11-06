@@ -27,18 +27,6 @@ devices.
 
 7)Build a navigation menu that highlights the selected entry. uses only Angular's directives.
 
-
-Q2)
-style.css
-h1 {
-  color: green; /* Heading text color */
-}
-
-p {
-  font-size: 13px; /* Paragraph font size */
-  color: blue; /* Paragraph text color */
-}
-
 8)Create an application for Students Record using AngularJS. 
 
 9)Write a program to How to get the value of a textbox using jQuery.
@@ -56,3 +44,14 @@ b. Clears the form details when the Reset button is clicked.
 Submit the captured data when the Submit button is clicked.
 
 12)Write a program to implement web service for calculator applications using PHP.
+
+Q2)
+style.css
+h1 {
+  color: green; /* Heading text color */
+}
+
+p {
+  font-size: 13px; /* Paragraph font size */
+  color: blue; /* Paragraph text color */
+}
