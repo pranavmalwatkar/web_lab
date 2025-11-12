@@ -39,12 +39,15 @@
   <ul>
     <li ng-repeat="item in menuItems"
         ng-click="select(item)"
-        ng-class="{active: selectedItem === item}">
+        ng-class="{active: selectedItem === item}"
+        tabindex="0"
+        ng-keydown="onKeyDown($event, item)">
       {{item}}
     </li>
   </ul>
 
   <p>You selected: <strong>{{selectedItem}}</strong></p>
+
 
   <script>
     var app = angular.module("navApp", []);
@@ -54,6 +57,12 @@
 
       $scope.select = function(item) {
         $scope.selectedItem = item;
+      };
+
+      $scope.onKeyDown = function(event, item) {
+        if (event.key === "Enter" || event.keyCode === 13) {
+          $scope.select(item);
+        }
       };
     });
   </script>
